@@ -11,47 +11,49 @@
 </head>
 <body>
 	<nav class="w3-bar w3-center w3-black">
-		<a href="#home" class="w3-button w3-bar-item">Home</a>
-		<a href="#services" class="w3-button w3-bar-item">Services</a>
-		<a href="#gallery" class="w3-button w3-bar-item">Gallery</a>
-		<a href="#contact" class="w3-button w3-bar-item">Contact Us</a>
+		<button class="tablink w3-button w3-bar-item" onclick="openPage('Home', this, 'red')">Home</button>
+		<button class="tablink w3-button w3-bar-item" onclick="openPage('Services', this, 'yellow')">Services</button>
+		<button class="tablink w3-button w3-bar-item" onclick="openPage('Gallery', this, 'blue')">Gallery</button>
+		<button class="tablink w3-button w3-bar-item" onclick="openPage('Contact Us', this, 'red')">Contact Us</button>
 	</nav>
-	<section>
-		<img class="mySlides" src="./ASSETS/IMAGES/photo.jpeg" style="width:100%">
-		<img class="mySlides" src="./ASSETS/IMAGES/photo-2.jpeg" style="width:100%">
-		<img class="mySlides" src="./ASSETS/IMAGES/photo-3.jpeg" style="width:100%">
-		<img class="mySlides" src="./ASSETS/IMAGES/photo-4.jpeg" style="width:100%">
-		<img class="mySlides" src="./ASSETS/IMAGES/photo-5.jpeg" style="width:100%">	
-	</section>
-	<script>
-		// Automatic Slideshow - change image every 3 seconds
-		var myIndex = 0;
-		carousel();
-
-		function carousel() {
-			var i;
-			var x = document.getElementsByClassName("mySlides");
-			for (i = 0; i < x.length; i++) {
-				x[i].style.display = "none";
+	<div id="Home" class="tabcontent">
+		<h3>Home</h3>
+		<section>
+			<img class="mySlides" src="./ASSETS/IMAGES/photo.jpeg" style="width:100%">
+			<img class="mySlides" src="./ASSETS/IMAGES/photo.jpeg-2" style="width:100%">
+			<img class="mySlides" src="./ASSETS/IMAGES/photo.jpeg-3" style="width:100%">
+			<img class="mySlides" src="./ASSETS/IMAGES/photo.jpeg-4" style="width:100%">
+			<img class="mySlides" src="./ASSETS/IMAGES/photo.jpeg-5" style="width:100%">
+		</section>
+		<script>
+			//Automatic Slideshow - change image every 3 seconds
+			var myIndex = 0;
+			carousel();
+			
+			function carousel() {
+				var i;
+				var x = document.getElementsByClassName("mySlides");
+				for (i = 0; i < x.length; i++) {
+					x[i].style.display = "none";
+				}
+				myIndex++;
+				if (myIndex > x.length) {
+					myIndex = 1;
+				}
+				
+				x[myIndex-1].style.display = "block";
+				
+				setTimeout(carousel, 3000);
 			}
-			myIndex++;
-			if (myIndex > x.length) {
-				myIndex = 1;
-			}
-	
-			x[myIndex-1].style.display = "block";
-
-			setTimeout(carousel, 3000);
-
-		}
-	</script>
-	<section class="w3-container w3-center" style="max-width:600px">
-		<h2 class="w3-wide">TEST TEXT</h2>
-		<p class="w3-opacity"><i>Such wow very text</i></p>
-	</section>
-	<section class="w3-container w3-content w3-center" style="max-width:600px">
-		<p class="w3-justify">We have created a website for Mirza Media Group's Clicks Clips business. Hehe haha hoohoo. Lorem ipsum dolor sit amet, consectetur adipsicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-	</section>
+		</script>
+		<section class="w3-container w3-center" style="max-width:600px">
+			<h2 class="w3-wide">TEST TEXT</h2>
+			<p class="w3-opacity"><i>Such wow very text</i></p>	
+		</section>
+		<section class="w3-container w3-content w3-center" style="max-width:600px">
+			<p class="w3-justify">We have created a website for Mirza Media Group's Clicks Clips business. Hehe haha hoohoo. Lorem ipsum dolor sit amet, consectetur dopsicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+		</section>
+	</div>	
 	<!-- Footer -->
 	<footer class="w3-container w3-padding-64 w3-center w3-black w3-xlarge">
 	<a href="#"><i class="fa fa-facebook-official"></i></a>
